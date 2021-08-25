@@ -1,0 +1,25 @@
+query Post($id:ID!, $size: Int!) {
+    post (id: $id) {
+        id
+        name
+        thumbnail {
+            type
+            url (width:$size, height:$size)
+        }
+        tagline
+        description
+        votesCount
+        user {
+            id
+            name
+        }
+        media {
+            type
+            url
+        }
+        makers {
+            id
+            name
+        }
+    }
+}

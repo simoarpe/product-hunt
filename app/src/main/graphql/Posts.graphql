@@ -1,0 +1,28 @@
+query Posts($cursor:String!, $first:Int!, $size: Int!) {
+  posts (after: $cursor, first: $first) {
+    edges {
+      node {
+        id 
+        name
+        tagline
+        votesCount
+        user {
+          id
+          name
+        }
+        thumbnail {
+          type
+          url (width:$size, height:$size)
+        }
+      }
+      cursor
+    }
+    pageInfo {
+      startCursor
+      endCursor
+      hasPreviousPage
+      hasNextPage
+    }
+    totalCount
+  }
+}

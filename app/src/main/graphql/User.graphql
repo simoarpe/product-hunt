@@ -1,0 +1,35 @@
+query User($id: ID!, $imageSize: Int!, $cursor: String!, $pagination: Int!) {
+    user(id: $id) {
+        id
+        name
+        username
+        headline
+        profileImage(size: $imageSize)
+        votedPosts(after: $cursor, first: $pagination) {
+            edges {
+                node {
+                    id
+                    name
+                    tagline
+                    votesCount
+                    user {
+                        id
+                        name
+                    }
+                    thumbnail {
+                        type
+                        url (width:$imageSize, height:$imageSize)
+                    }
+                }
+                cursor
+            }
+            pageInfo {
+                startCursor
+                endCursor
+                hasPreviousPage
+                hasNextPage
+            }
+            totalCount
+        }
+    }
+}

@@ -39,14 +39,12 @@ android {
         }
     }
 
-    // Tests can be Robolectric or instrumented tests
     sourceSets {
-        String sharedTestDir = 'src/sharedTest/java'
         test {
-            java.srcDir sharedTestDir
+            java.srcDir 'src/test/java'
         }
         androidTest {
-            java.srcDir sharedTestDir
+            java.srcDir 'src/androidTest/java'
         }
     }
 

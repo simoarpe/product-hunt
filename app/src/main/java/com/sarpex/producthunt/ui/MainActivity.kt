@@ -25,7 +25,7 @@ class MainActivity : AppCompatActivity() {
         val userScreenViewModel: UserScreenViewModel by viewModels { userScreenViewModelFactory }
 
         setContent {
-            // ProductHuntApp(appContainer, homeScreenViewModel, userScreenViewModel)
+            ProductHuntApp(appContainer, homeScreenViewModel, userScreenViewModel)
         }
     }
 }

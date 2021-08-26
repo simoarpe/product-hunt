@@ -1,3 +1,21 @@
 <resources>
     <string name="app_name">Product Hunt</string>
+
+    <string name="connection_error_title">Connection error</string>
+    <string name="connection_error_message">Unable to fetch post feeds.\nCheck your internet connection and try again.</string>
+    <string name="retry_label">Retry</string>
+
+    <string name="load_error">Can\'t update latest data</string>
+    <string name="retry">Retry</string>
+    <string name="cd_navigate_up">Navigate up</string>
+
+    <string name="home_title">Home</string>
+    <string name="home_tap_to_load_content">Tap to load content</string>
+
+    <string name="cd_add_to_favorites">Add to favorites</string>
+    <string name="cd_share">Share</string>
+    <string name="cd_text_settings">Text settings</string>
+
+    <string name="article_functionality_not_available">Functionality not available \uD83D\uDE48</string>
+    <string name="close">CLOSE</string>
 </resources>

@@ -11,7 +11,7 @@ import com.sarpex.producthunt.model.UserQuery
 import kotlinx.coroutines.flow.Flow
 
 /**
- * Created by Simone on 25/08/21.
+ * User screen view model.
  */
 class UserScreenViewModel(private val userRepository: UserRepository) : ViewModel() {
 
@@ -25,8 +25,6 @@ class UserScreenViewModel(private val userRepository: UserRepository) : ViewMode
 class UserScreenViewModelFactory(val postsRepository: UserRepository) : ViewModelProvider.Factory {
     /**
      * Creates a new instance of the given `Class`.
-     *
-     *
      *
      * @param modelClass a `Class` whose instance is requested
      * @param <T>        The type parameter for the ViewModel.

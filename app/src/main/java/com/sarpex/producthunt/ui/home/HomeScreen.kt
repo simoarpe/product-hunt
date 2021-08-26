@@ -1,15 +1,11 @@
 package com.sarpex.producthunt.ui.home
 
 import android.content.res.Configuration.UI_MODE_NIGHT_YES
-import androidx.compose.foundation.gestures.Orientation
-import androidx.compose.foundation.gestures.scrollable
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
-import androidx.compose.foundation.lazy.rememberLazyListState
-import androidx.compose.foundation.rememberScrollState
 import androidx.compose.material.ExperimentalMaterialApi
 import androidx.compose.material.Icon
 import androidx.compose.material.IconButton
@@ -63,6 +59,7 @@ fun HomeScreen(
     homeScreenViewModel: HomeScreenViewModel
 ) {
     val (postUiState, refreshPost, clearError) = produceUiState(homeScreenViewModel) {
+        val posts = getPosts()
         Result.Success(posts)
     }
 
@@ -195,16 +192,16 @@ private fun PostList(
     val lazyPostItems: LazyPagingItems<PostsQuery.Edge> = postItems.collectAsLazyPagingItems()
 
     // https://issuetracker.google.com/issues/177245496
-    val listState = rememberLazyListState()
-    val scrollState = rememberScrollState()
+    // val listState = rememberLazyListState()
+    // val scrollState = rememberScrollState()
     LazyColumn(
-        modifier = modifier
-            .scrollable(scrollState, Orientation.Vertical),
+        modifier = modifier,
+        // .scrollable(scrollState, Orientation.Vertical),
         contentPadding = rememberInsetsPaddingValues(
             insets = LocalWindowInsets.current.systemBars,
             applyTop = false
         ),
-        state = listState
+        // state = listState
     ) {
         items(lazyPostItems) { post ->
             post?.let {

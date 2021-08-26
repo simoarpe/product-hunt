@@ -14,9 +14,12 @@ import kotlinx.coroutines.flow.Flow
  * Home screen view model.
  */
 class HomeScreenViewModel(private val postRepository: PostRepository) : ViewModel() {
-    val posts: Flow<PagingData<PostsQuery.Edge>> = Pager(PagingConfig(pageSize = 40)) {
-        PostsSource(postRepository)
-    }.flow
+
+    fun getPosts(): Flow<PagingData<PostsQuery.Edge>> {
+        return Pager(PagingConfig(pageSize = 40)) {
+            PostsSource(postRepository)
+        }.flow
+    }
 }
 
 class HomeScreenViewModelFactory(val postRepository: PostRepository) : ViewModelProvider.Factory {

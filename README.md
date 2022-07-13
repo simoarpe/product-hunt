@@ -5,6 +5,8 @@
 Product Hunt Android app using Jetpack Compose.
 The app supports both day mode and night mode.
 
+👉 Check the article on my blog https://sarpex.com/2022/07-product-hunt-app-jetpack-compose
+
 ⚡️ A runnable debug version of the app is [available in `apk/app-debug.apk`](apk/app-debug.apk), just copy it in your Android device to see it in action!
 
 👀 Before running the project it's important to set the API Key and API Secret in the [`Apollo.kt` file](https://github.com/simoarpe/product-hunt/blob/main/app/src/main/java/com/sarpex/producthunt/Apollo.kt#L75-L76). Refer to the [OAuth section](#-oauth) for all the steps.
